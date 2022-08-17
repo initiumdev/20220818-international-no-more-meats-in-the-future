@@ -134,12 +134,22 @@ var index = function () {
     })
   }
 	var init = function(){
-    chart8()
-    chart1()
-    chart2()
-    chart3()
-    chart5()
-    bridge()
+    const tl = gsap.timeline()
+    const body = document.querySelector('body');
+    const wrapper = document.querySelector('#wrapper');
+    bodyScrollLock.disableBodyScroll(body)
+    imagesLoaded( wrapper, function( instance ) {
+      console.log('all images are loaded');
+      chart8()
+      chart1()
+      chart2()
+      chart3()
+      chart5()
+      bridge()
+      bodyScrollLock.enableBodyScroll(body)
+      tl.to(loading, {xPercent: 100, duration: 1, ease: 'power3.inOut'})
+        .set(loading, {autoAlpha: 0})
+    });
 	};
 	return {
 		init: function () {
