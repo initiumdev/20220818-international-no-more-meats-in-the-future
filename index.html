@@ -745,9 +745,10 @@
     <script src="https://public.flourish.studio/resources/embed.js"></script>
     <script data-cfasync="false" src="js/app.js"></script>
     <script>
-      window.onload = function() {
+      bodyScrollLock.disableBodyScroll(document.querySelector('body'))
+      document.addEventListener("DOMContentLoaded", function(){
         index.init();
-      }
+      });
     </script>
   </body>
 </html>
