@@ -742,13 +742,12 @@
         </div>
       </footer>
     </div>
-    <script src="https://public.flourish.studio/resources/embed.js"></script>
-    <script src="js/app.js"></script>
+    <script defer src="https://public.flourish.studio/resources/embed.js"></script>
+    <script data-cfasync="false" src="js/app.js"></script>
     <script>
-      bodyScrollLock.disableBodyScroll(document.querySelector('body'))
-      document.addEventListener("DOMContentLoaded", function(){
+      window.onload = function() {
         index.init();
-      });
+      }
     </script>
   </body>
 </html>
